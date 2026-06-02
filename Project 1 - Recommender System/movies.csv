@@ -1,0 +1,26 @@
+movieId,title,year,genre1,genre2,director,avgRating
+M001,The Matrix,1999,Sci-Fi,Action,Wachowski Sisters,8.7
+M002,Inception,2010,Sci-Fi,Thriller,Christopher Nolan,8.8
+M003,The Godfather,1972,Crime,Drama,Francis Ford Coppola,9.2
+M004,Parasite,2019,Thriller,Drama,Bong Joon-ho,8.5
+M005,Interstellar,2014,Sci-Fi,Drama,Christopher Nolan,8.6
+M006,Pulp Fiction,1994,Crime,Drama,Quentin Tarantino,8.9
+M007,The Dark Knight,2008,Action,Crime,Christopher Nolan,9.0
+M008,Spirited Away,2001,Animation,Fantasy,Hayao Miyazaki,8.6
+M009,Whiplash,2014,Drama,Music,Damien Chazelle,8.5
+M010,Get Out,2017,Horror,Thriller,Jordan Peele,7.7
+M011,Mad Max: Fury Road,2015,Action,Sci-Fi,George Miller,8.1
+M012,Her,2013,Sci-Fi,Romance,Spike Jonze,8.0
+M013,The Social Network,2010,Drama,Biography,David Fincher,7.7
+M014,12 Angry Men,1957,Drama,Crime,Sidney Lumet,9.0
+M015,Everything Everywhere All at Once,2022,Sci-Fi,Comedy,Daniels,7.8
+M016,Oldboy,2003,Mystery,Thriller,Park Chan-wook,8.4
+M017,The Grand Budapest Hotel,2014,Comedy,Drama,Wes Anderson,8.1
+M018,La La Land,2016,Drama,Romance,Damien Chazelle,8.0
+M019,Dune,2021,Sci-Fi,Action,Denis Villeneuve,8.0
+M020,Roma,2018,Drama,Biography,Alfonso Cuarón,7.7
+M021,Knives Out,2019,Mystery,Comedy,Rian Johnson,7.9
+M022,Portrait of a Lady on Fire,2019,Drama,Romance,Céline Sciamma,8.1
+M023,Moonlight,2016,Drama,Biography,Barry Jenkins,7.4
+M024,The Revenant,2015,Adventure,Drama,Alejandro G. Iñárritu,8.0
+M025,Blade Runner 2049,2017,Sci-Fi,Drama,Denis Villeneuve,8.0
