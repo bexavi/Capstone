@@ -1,0 +1,15 @@
+flowchart TD
+  Q[User question] --> R[router.py \n classify query type]
+  R --> T{Route}
+  T -->|themes| G1[Gene mention frequencies\nacross corpus]
+  T -->|author_stats| G2[Author × paper counts]
+  T -->|gene| G3[Chunks from papers\nmentioning gene X]
+  T -->|author| G4[Chunks from papers\nby author Y]
+  T -->|semantic| G5[Vector similarity\nover chunks]
+  G1 --> M[Merge context + abstain check]
+  G2 --> M
+  G3 --> M
+  G4 --> M
+  G5 --> M
+  M --> L[LLM: answer only\nfrom numbered passages]
+  L --> OUT[Streamed answer +\ncitation list]

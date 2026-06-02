@@ -1,0 +1,25 @@
+flowchart TB
+  subgraph authors["Authors"]
+    A[(:Author)]
+  end
+
+  subgraph papers["Publication & text"]
+    P[(:Paper)]
+    C[(:Chunk)]
+    CL[(:Claim)]
+  end
+
+  subgraph biology["Reference & concepts"]
+    G[(:Gene)]
+    E[(:Entity)]
+  end
+
+  A -->|AUTHORED| P
+  P -->|HAS_CHUNK| C
+  P -->|MENTIONS| G
+  P -->|HAS_TOPIC| E
+  C -->|MENTIONS| E
+  CL -->|SUPPORTS| C
+  CL -->|ABOUT| E
+  E -->|RELATED_TO\ningest: GENE| G
+  E2[(:Entity)] -.->|RELATED_TO| E3[(:Entity)]

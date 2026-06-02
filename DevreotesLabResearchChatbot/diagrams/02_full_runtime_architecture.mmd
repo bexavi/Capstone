@@ -1,0 +1,47 @@
+flowchart TB
+  subgraph offline["Offline: build corpus"]
+    PDF["papers/ → extract → extracted/"]
+    PIPE["schema → ingest → embeddings"]
+    PDF --> PIPE
+  end
+
+  NEO["Neo4j\n(graph + vector index)"]
+  PIPE --> NEO
+
+  subgraph clients["Clients"]
+    BR["Browser\n(Nuxt UI)"]
+    GR["Gradio\napp.py"]
+  end
+
+  subgraph nuxt["Nuxt server (Nitro)"]
+    API["POST /api/devreotes/chats/:id\n(SSE / AI SDK stream)"]
+    APPDB["App DB\nmessages, traces"]
+    BRG["devreotes_bridge.py\n(NDJSON stdout)"]
+  end
+
+  subgraph fastapi["Optional: DEVREOTES_API_URL"]
+    FAPI["FastAPI\nPOST /chat/stream"]
+  end
+
+  subgraph core["Python backend (backend/app)"]
+    CHAT["chatbot.py\n(router vs agent)"]
+    ROUT["router.py"]
+    AGT["agent_tools"]
+    RETR["retrieval.py\nvector + Cypher"]
+  end
+
+  LLM["OpenAI API"]
+
+  BR --> API
+  API --> APPDB
+  API --> BRG
+  API -.->|optional| FAPI
+  FAPI --> CHAT
+  BRG --> CHAT
+  GR --> CHAT
+  CHAT --> ROUT
+  CHAT --> AGT
+  ROUT --> RETR
+  AGT --> RETR
+  RETR --> NEO
+  CHAT --> LLM

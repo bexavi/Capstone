@@ -1,0 +1,19 @@
+flowchart LR
+  subgraph ingest["Offline: build the library"]
+    PDF[papers/*.pdf]
+    EXT[extract_pdfs]
+    JSON[extracted/*.json]
+    ING[ingest_papers]
+    NEO[(Neo4j)]
+    EMB[embeddings]
+    PDF --> EXT --> JSON --> ING --> NEO
+    NEO --> EMB
+  end
+  subgraph online["Online: answer a question"]
+    Q[User question]
+    R[router.py]
+    RET[retrieval.py]
+    CB[chatbot.py + LLM]
+    Q --> R --> RET --> CB --> A[Answer + citations]
+  end
+  NEO --> RET
